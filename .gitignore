@@ -6,3 +6,4 @@ env/*
 .idea/
 __pycache__/*
 __pycache__/
+mysite/__pycache__/*
