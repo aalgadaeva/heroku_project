@@ -1,8 +1,12 @@
-{%extends 'base.html' %}
-{%block title %} Gallery Page {% endblock %}
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Gallery Page {% endblock title %}
 
 {% block content %}
-
-<h1> This is Gallery page </h1>
-
-{% endblock %}
+   <h1>Gallery Page</h1>
+    {% for item in photos %}
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.description }}</p>
+        <img src="/media/{{ item.image }}" alt="kartinka" height="300px">
+    {% endfor %}
+{% endblock content %}

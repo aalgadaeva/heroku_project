@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.core.files import File
+from .models import Photos
 
 class HomePageView(TemplateView):
     template_name = 'home.html'
@@ -19,5 +20,6 @@ def contacts(request):
     f.close()
     return HttpResponse(file_content, content_type="text/plain")
 
-class GalleryPageView(TemplateView):
-    template_name = 'gallery.html'
+def gallery(request):
+   photos = Photos.objects.all()
+   return render(request, 'gallery.html', {'photos': photos})

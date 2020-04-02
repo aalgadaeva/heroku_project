@@ -1,17 +1,28 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title%} Main Page {% endblock %}</title>
+    <title>{% block title %} No emty set {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <a href="{% url 'home' %}"> Home </a> | <a href="{% url 'about' %}"> About </a> | <a href="{% url 'contacts' %}"> Contacts </a>| <a href="{% url 'gallery' %}"> Gallery </a>
-    </header>
 
-    {% block content %}
-    
-    {% endblock %}
+<header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'gallery' %}">Gallery</a></li>
+            <li><a href="{% url 'contacts' %}">Contacts</a></li>
+        </ul>
+    </nav>
+</header>
+
+{% block content %}
+    <p>No information!!! </p>
+{% endblock content %}
+
 </body>
 </html>
